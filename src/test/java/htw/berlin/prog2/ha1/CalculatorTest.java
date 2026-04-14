@@ -88,7 +88,21 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    // TODO hier weitere Tests erstellen
 
-    //TODO hier weitere Tests erstellen
+    @Test
+    @DisplayName("Multiplikation von zwei Zahlen funktioniert")
+    void testMultiplication() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(6);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expected = "30";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
-

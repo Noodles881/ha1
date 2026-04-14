@@ -127,7 +127,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Multiplikation von zwei Zahlen funktioniert")
+    @DisplayName("Should show result, then takes new digit for new Operations")
     void testMarvi() {
         Calculator calc = new Calculator();
 

@@ -105,4 +105,42 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Funktion clearKey funktioniert")
+    void testClearKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(6);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(5);
+        calc.pressClearKey();
+
+        assertEquals("0", calc.readScreen());
+        assertEquals(6.0, calc.getLatestValue());
+        assertEquals("x", calc.getLatestOperation());
+
+        calc.pressClearKey();
+        assertEquals(0.0, calc.getLatestValue());
+        assertEquals("", calc.getLatestOperation());
+
+    }
+
+    @Test
+    @DisplayName("Multiplikation von zwei Zahlen funktioniert")
+    void testMarvi() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(6);
+        calc.pressUnaryOperationKey("√");
+        calc.pressDigitKey(9);
+
+        String expected = "9";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
 }
